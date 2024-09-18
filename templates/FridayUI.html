@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Friday UI</title>
+    <link rel="stylesheet" href="/static/style.css"> 
+</head>
+
+<body>
+    <div class="section1">
+        <div class="header">a chatbot <span> <span class="dash">- </span>made by abhi</span></div>
+        <div class="links"><a href="#">Instagram</a> <br> <a href="#">Github</a></div>
+        <div class="text">E.D.I.T.H</div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="info">a simple chatbot made <br> just for fun that <br> can perform couple of tasks...</div>
+    </div>
+    
+    <div class="section2">
+        <div class="chat-container">
+            <div class="chatbox" id="chatbox"></div>
+            <input type="text" id="userInput" placeholder="Type a message">
+            <button onclick="sendQuery()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function sendQuery() {
+            const userQuery = document.getElementById('userInput').value;
+
+            if (userQuery) {
+                const chatbox = document.getElementById('chatbox');
+                chatbox.innerHTML += `<div class='message user'><strong>You: </strong> ${userQuery}</div>`;
+
+                fetch('http://127.0.0.1:5000/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: userQuery }),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        chatbox.innerHTML += `<div class='message bot'><strong>E.D.I.T.H:</strong>  ${data.reply}</div>`;
+                        document.getElementById('userInput').value = '';
+                    });
+            }
+        }
+    </script>
+</body>
+
+</html>

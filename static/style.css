@@ -1,0 +1,249 @@
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    /* width: 420px; */
+    width: calc(100vw - 150px);
+    height: calc(100vh - 100px); 
+    border: 1.5px solid black;
+    background-color: #ff3030;
+    border-radius: 8px;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chatbox {
+    margin: 10px;
+    width: calc(100% - 45px);
+    height: calc(100% - 100px);
+    border: 2px solid #ff3030;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message {
+    margin: 10px;
+}
+
+.user {
+    color: #000;
+    font-family: Agency FB;
+    text-transform: uppercase;
+    font-size: 22px;
+    border: 1px solid #ffffff;
+    background-color: #ffef3b;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.bot {
+    color: black;
+    background-color: #ff3030;
+    border: 1px solid white;
+    font-size: 22px;
+    font-family: Agency FB;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 10px;
+    border-radius: 8pxt
+}
+
+input[type="text"] {
+    width: calc(100% - 175px);
+    padding: 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    margin-left: 10px;
+}
+
+input::placeholder {
+    color: black;
+    font-size: 20px;
+    margin-top: 2px;
+    font-weight: 755;
+    font-family: Agency FB;
+    text-transform: uppercase;
+}
+
+button {
+    height: 43px;
+    top: 5px;
+    left: 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffef3b;
+    color: black;
+    cursor: pointer;
+    width: 120px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: Agency FB;
+    font-weight: bold;
+    font-size: 25px;
+    position: relative;
+}
+
+.section1::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateZ(-1px) scale(2.2);
+    background: url("/static/bg.png") top center;
+    background-size: cover;
+    background-color: #00082a;
+}
+
+.section1, .section2 {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.section2 {
+    /* background: url("/static/bg.jpg"); 
+    background-size: cover; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2rem solid #ff3030;
+    background-color: #ffef3b;
+}
+
+.text {
+    display: flex;
+    top: 30%;
+    left: 50%;
+    position: absolute;
+    font-family: Agency FB;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15vw;
+    /* color: #ff3030; */
+    color: black;
+    /* color: transparent; */
+    /* text-shadow: 0px 0px 10px #ff3030; */
+    text-shadow: 0 0 10px black;
+    /* background-clip: text;
+    -webkit-background-clip: text; */
+    transform: scale(1,1.1) translate(-50%, 10%);
+}
+
+.text::after {
+    content: "_";
+    animation: blink 0.5s steps(5, start) infinite;
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+.info {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    left: 79%;
+    top: -40px;
+    color: #ff3030;
+    backdrop-filter: blur(3px);
+    border: 3px dashed #ff3030;
+    border-radius: 12px;
+    font-family: Agency FB;
+    text-transform: uppercase;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.box1 {
+    height: 90px;
+    width: 90px;
+    background-color: transparent;
+    position: absolute;
+    top: 80%;
+    left: 47%;
+    transform: rotateZ(45deg);
+    border-right: 4px solid #ffef3b;
+    border-bottom: 4px solid #ffef3b;
+    animation: blink 1s steps(5, start) infinite;
+}
+
+.box2 {
+    height: 90px;
+    width: 90px;
+    background-color: transparent;
+    position: absolute;
+    top: 77%;
+    left: 47%;
+    transform: rotateZ(45deg);
+    border-right: 4px solid #ffef3b;
+    border-bottom: 4px solid #ffef3b;
+    animation: blink 1s steps(5, start) infinite;
+}
+
+.header {
+    color: #000;
+    font-family: Agency FB;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    left: 2%;
+    top: 2%;
+} 
+
+span {
+    color: #ffef3b;
+}
+
+.dash {
+    color: rgb(255, 255, 255);
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: transparent;
+    border: 3px dashed #ffef3b;
+    border-radius: 8px;
+    height: 150px;
+    width: 200px;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+}
+
+.links a {
+    text-decoration: underline;
+    color: #ffef3b;
+    font-family: Agency FB;
+    font-size: 32px;
+    text-transform: uppercase;
+}
