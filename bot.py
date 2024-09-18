@@ -71,7 +71,7 @@ def chatbot_response(user_input):
 
 @app.route('/')
 def index():
-    return render_template('FridayUI.html')
+    return render_template('Edith.html')
 
 @app.route('/chat', methods=['POST'])
 def chat():
