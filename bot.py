@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import webbrowser as web
 import wikipedia as wiki
-import datetime as dt
+import subprocess
 
 app = Flask(__name__)
 
@@ -61,6 +61,10 @@ def chatbot_response(user_input):
         elif "-o classroom" in user_input:
             web.open_new_tab("https://classroom.google.com/")
             return "Opening classroom"
+
+        elif "-c wallpaper of desktop" in user_input:
+            subprocess.run("iris", shell=True)
+            return "Changing desktop wallpaper"
 
         else:
             return "Command not found..."
